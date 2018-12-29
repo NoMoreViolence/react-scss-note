@@ -7,7 +7,7 @@ class Note extends Component {
     <div id="note">
       <div>{this.props.title}</div>
       <div>
-        {format(this.props.date, 'MM / HH ddd')}
+        {format(this.props.date, 'MM / DD ddd') + `${this.props.edited ? ' (edited)' : ''}`}
         {this.props.edited && '(edited)'}
       </div>
       <div>{this.props.text}</div>
