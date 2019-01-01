@@ -15,7 +15,18 @@ class NoteList extends Component {
     const searchResult = notes => renderContacts(notes.filter(note => note.text.indexOf(this.props.search) !== -1));
     const renderContacts = notes => {
       return notes.map((note, idx) => {
-        return <Note key={idx} title={note.title} text={note.text} date={note.date} edited={note.edited} />;
+        return (
+          <Note
+            key={idx}
+            noteNumber={idx}
+            changeNote={this.props.changeNote}
+            deleteNote={this.props.deleteNote}
+            title={note.title}
+            text={note.text}
+            date={note.date}
+            edited={note.edited}
+          />
+        );
       });
     };
     return (

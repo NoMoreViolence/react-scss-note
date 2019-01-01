@@ -51,7 +51,14 @@ class SearchBar extends Component {
       <SearchBarDiv>
         {this.state.modalShowState && (
           <Modal close={this.toogleCreateModal}>
-            <Memo addNote={this.props.addNote} close={this.toogleCreateModal} title={'메모 생성'} />
+            <Memo
+              action={this.props.addNote}
+              close={this.toogleCreateModal}
+              title={'메모 생성'}
+              subject={''}
+              text={''}
+              number={''}
+            />
           </Modal>
         )}
         <CreateButton onClick={this.toogleCreateModal}>메모 작성</CreateButton>

@@ -67,10 +67,6 @@ class App extends Component {
     this.setState({
       notes: [{ date: new Date(), text, title, edited: false }, ...this.state.notes]
     });
-  changeNoteMode = number =>
-    this.setState({
-      notes: this.state.notes.map((note, idx) => (idx === number ? { ...note, edited: !note.edited } : note))
-    });
   changeNote = (title, text, number) =>
     this.setState({
       notes: this.state.notes.map((note, idx) => (idx === number ? { ...note, title, text } : note))
@@ -88,7 +84,12 @@ class App extends Component {
             <Title>메모장</Title>
             <SearchBar addNote={this.addNote} search={this.state.search} onChange={this.onChange} />
           </Header>
-          <NoteList notes={this.state.notes} search={this.state.search} />
+          <NoteList
+            notes={this.state.notes}
+            search={this.state.search}
+            changeNote={this.changeNote}
+            deleteNote={this.deleteNote}
+          />
         </AppDiv>
       </RootDiv>
     );
