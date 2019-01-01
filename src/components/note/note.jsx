@@ -37,8 +37,8 @@ class Note extends Component {
         </span>
       </div>
       <div>
-        {format(this.props.date, 'MM / DD ddd') + `${this.props.edited ? ' (edited)' : ''}`}
-        {this.props.edited && '(edited)'}
+        {format(this.props.date, 'MM / DD ddd')}
+        {this.props.edited && ' (edited)'}
       </div>
       <div>{this.props.text}</div>
 
@@ -49,11 +49,14 @@ class Note extends Component {
           }}
         >
           <Memo
+            number={this.props.noteNumber}
             action={this.props.changeNote}
             close={() => {
               this.toogle({ target: { id: 'showChangeModal' } });
             }}
             title={'메모 수정'}
+            subject={this.props.title}
+            text={this.props.text}
           />
         </Modal>
       )}

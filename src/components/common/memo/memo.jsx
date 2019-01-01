@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
 import './memo.scss';
 
-const onChange = (state, props, etc) => {
-  console.log(state);
-  console.log(props);
-  console.log(etc);
-  return state;
-};
-
 class Memo extends Component {
   state = {
-    title: '',
-    text: ''
+    title: this.props.subject,
+    text: this.props.text
   };
-
-  componentDidMount() {
-    this.setState({});
-  }
 
   onChnage = e =>
     this.setState({
       [e.target.name]: e.target.value
     });
 
-  action = () => this.props.action(this.state.title, this.state.text, this.props.number) || this.props.close();
+  action = () =>
+    this.props.action(this.state.title, this.state.text, this.props.number ? this.props.number : -1) ||
+    this.props.close();
 
   render = () => (
     <>
@@ -50,8 +41,8 @@ class Memo extends Component {
           className="radius"
         />
       </div>
-      <div id="memo-button">
-        <button onClick={this.addNote}>작성하기</button>
+      <div id="add-or-change-memo-button">
+        <button onClick={this.action}>작성하기</button>
       </div>
     </>
   );

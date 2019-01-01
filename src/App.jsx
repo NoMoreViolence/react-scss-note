@@ -69,7 +69,7 @@ class App extends Component {
     });
   changeNote = (title, text, number) =>
     this.setState({
-      notes: this.state.notes.map((note, idx) => (idx === number ? { ...note, title, text } : note))
+      notes: this.state.notes.map((note, idx) => (idx === number ? { ...note, title, text, edited: true } : note))
     });
   deleteNote = number =>
     this.setState({
