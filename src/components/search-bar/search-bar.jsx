@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Modal from './../common/modal/modal';
+import Memo from './../common/memo/memo';
+
 const SearchBarDiv = styled.div`
   display: flex;
 `;
@@ -33,10 +36,25 @@ const InputBar = styled.input`
 `;
 
 class SearchBar extends Component {
+  state = {
+    modalShowState: false
+  };
+
+  toogleCreateModal = () => {
+    this.setState({
+      modalShowState: !this.state.modalShowState
+    });
+  };
+
   render = () => {
     return (
       <SearchBarDiv>
-        <CreateButton>메모 작성</CreateButton>
+        {this.state.modalShowState && (
+          <Modal close={this.toogleCreateModal}>
+            <Memo addNote={this.props.addNote} close={this.toogleCreateModal} title={'메모 생성'} />
+          </Modal>
+        )}
+        <CreateButton onClick={this.toogleCreateModal}>메모 작성</CreateButton>
         <InputBar
           name="search"
           placeholder="메모를 검색하세요"

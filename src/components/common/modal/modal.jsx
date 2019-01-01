@@ -22,7 +22,7 @@ class ModalPage extends Component {
   render = () => (
     <div className="modal transparent-black-background">
       <div ref={this.setWrapperRef} className="modal-card white-background white-gray-border radius transparent-shadow">
-        {this.props.component && <this.props.component close={this.props.close} />}
+        {this.props.children && this.props.children}
       </div>
     </div>
   );

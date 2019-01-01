@@ -63,11 +63,9 @@ class App extends Component {
       [input.currentTarget.name]: input.currentTarget.value
     });
 
-  addNote = () =>
+  addNote = (title, text) =>
     this.setState({
-      notes: [{ date: new Date(), text: this.state.text, title: this.state.title, edited: false }, ...this.state.notes],
-      title: '',
-      text: ''
+      notes: [{ date: new Date(), text, title, edited: false }, ...this.state.notes]
     });
   changeNoteMode = number =>
     this.setState({
@@ -88,7 +86,7 @@ class App extends Component {
         <AppDiv>
           <Header>
             <Title>메모장</Title>
-            <SearchBar search={this.state.search} onChange={this.onChange} />
+            <SearchBar addNote={this.addNote} search={this.state.search} onChange={this.onChange} />
           </Header>
           <NoteList notes={this.state.notes} search={this.state.search} />
         </AppDiv>
