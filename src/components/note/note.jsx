@@ -13,9 +13,7 @@ class Note extends Component {
     showDeleteModal: false
   };
 
-  componentDidMount() {
-    console.log(this.props.noteNumber);
-  }
+  componentDidMount() {}
 
   toogle = e => {
     this.setState({
