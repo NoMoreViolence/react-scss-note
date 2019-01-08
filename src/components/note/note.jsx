@@ -68,6 +68,7 @@ class Note extends Component {
           <Delete
             number={this.props.noteNumber}
             action={this.props.deleteNote}
+            memoTitle={this.props.title}
             close={() => {
               this.toogle({ target: { id: 'showDeleteModal' } });
             }}

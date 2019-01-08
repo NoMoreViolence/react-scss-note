@@ -40,21 +40,7 @@ class App extends Component {
     text: '',
     notes: [
       { date: new Date(), text: 'one', title: '원', edited: false },
-      { date: new Date(), text: 'two', title: '투', edited: false },
-      { date: new Date(), text: 'three', title: '쓰리', edited: false },
-      { date: new Date(), text: 'four', title: '포', edited: false },
-      { date: new Date(), text: 'one', title: '원', edited: false },
-      { date: new Date(), text: 'two', title: '투', edited: false },
-      { date: new Date(), text: 'three', title: '쓰리', edited: false },
-      { date: new Date(), text: 'four', title: '포', edited: false },
-      { date: new Date(), text: 'one', title: '원', edited: false },
-      { date: new Date(), text: 'two', title: '투', edited: false },
-      { date: new Date(), text: 'three', title: '쓰리', edited: false },
-      { date: new Date(), text: 'four', title: '포', edited: false },
-      { date: new Date(), text: 'one', title: '원', edited: false },
-      { date: new Date(), text: 'two', title: '투', edited: false },
-      { date: new Date(), text: 'three', title: '쓰리', edited: false },
-      { date: new Date(), text: 'four', title: '포', edited: false }
+      { date: new Date('2000-03-23'), text: '두번째 메모', title: 'SECOND', edited: false }
     ]
   };
 

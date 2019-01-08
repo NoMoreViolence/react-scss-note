@@ -10,6 +10,8 @@ class Delete extends Component {
         <span>메모 삭제</span>
       </div>
 
+      <div>정말 메모를 삭제 하시겠어요 ? ({this.props.memoTitle})</div>
+
       <div id="memo-button">
         <button onClick={this.action}>삭제하기</button>
       </div>
